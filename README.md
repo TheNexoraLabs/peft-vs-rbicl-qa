@@ -16,7 +16,7 @@ The first and second authors contributed equally. Full affiliation details are p
 
 ## Repository status
 
-This repository provides the research notebooks and supporting artifacts for the comparative study. It includes data-minimized evaluation results and aggregate human-evaluation summaries. It does not redistribute benchmark source text, model weights, raw annotator-level records, or credentials. See the documentation for provenance and known reproducibility limitations.
+This public repository provides the research notebooks and supporting artifacts for the comparative study. It includes data-minimized evaluation results and aggregate human-evaluation summaries. It does not redistribute benchmark source text, model weights, raw annotator-level records, or credentials. The GitHub repository is public; the first archived Zenodo release and DOI are still pending.
 
 ## Experimental systems
 
@@ -72,7 +72,7 @@ The repository citation metadata is provided in [`CITATION.cff`](CITATION.cff). 
 
 The code in this repository is distributed under the [MIT License](LICENSE). The license applies to the repository code and associated software files. Dataset materials, pretrained model weights, and third-party assets remain subject to their respective licenses and terms.
 
-## Known limitations of this release candidate
+## Known limitations
 
 - The prepared dataset CSV and model weights are not included.
 - Some paths and caches remain Kaggle-oriented and may need adaptation outside Kaggle.

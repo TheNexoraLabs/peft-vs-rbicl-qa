@@ -6,4 +6,4 @@
 
 ## License
 
-The repository code is distributed under the MIT License. The copyright line is `Copyright (c) 2025 TheNexoraLabs`, following the maintainer's instruction to update the former project name. The maintainer reports that all three authors approve public release. Before upload, the maintainer should verify that TheNexoraLabs is the correct copyright holder for all files included in this repository. Third-party datasets, models, and assets remain under their own terms.
+The public repository includes the MIT License with the copyright line `Copyright (c) 2025 TheNexoraLabs`, following the maintainer's instruction to update the former project name. The maintainer reports that all three authors approve public release. The maintainer should ensure that TheNexoraLabs is the actual copyright holder or is authorized by the relevant rights holders to license all included code under MIT. Third-party datasets, models, and assets remain under their own terms.

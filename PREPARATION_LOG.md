@@ -41,11 +41,21 @@
 - The legacy Excel hour entries could not be mapped to the same saved Notebook versions; they are not treated as the source of full-run duration.
 - Peak allocated/reserved GPU memory and PEFT training/evaluation logs are included.
 
-## Pending before public release
+## Public repository status (2026-11-26)
 
-- The maintainer confirmed that all three authors approve public release of the code and derived result artifacts.
-- Author order and affiliations were updated from the manuscript author page.
-- `CITATION.cff` was rebuilt for the current manuscript title and all three authors.
-- The MIT license copyright holder was updated to `TheNexoraLabs`, following the maintainer's instruction and reported author approval.
-- Before publication, the project maintainer should ensure that `TheNexoraLabs` is the correct copyright holder for all included code; the repository organization name alone does not establish legal ownership.
+- The repository was pushed to the public GitHub repository: https://github.com/TheNexoraLabs/peft-vs-rbicl-qa
+- The published tree contains 87 files (86 files covered by `FILE_MANIFEST.sha256`; the manifest does not hash itself).
+- The public tree was checked after upload. All expected top-level folders, eight notebooks, result files, documentation, `CITATION.cff`, and `LICENSE` are present.
+- The local release archive matched all 86 SHA-256 manifest entries with no missing, mismatched, or unexpected files.
+- All eight notebooks passed current `nbformat` validation; the validator emitted a non-fatal warning that cell `id` values are absent. This may be cleaned up in a later maintenance commit.
+- The three Python scripts compiled successfully, relative Markdown links resolved, and a scan for common token/key patterns found no matches in the release files. These checks reduce risk but are not a guarantee that every possible secret has been identified.
+- The maintainer reports that all three authors approve public release of the code and derived result artifacts.
+- The MIT license copyright notice is set to `TheNexoraLabs` at the maintainer's instruction. The organization name should be used as copyright holder only if it is the actual rights holder or is authorized by the rights holders to issue the license.
+- The LoRA Run All duration (03:48:12) was independently confirmed against the author's Kaggle Version page. Other saved Notebook metadata records are successful but have not each been independently screenshot-verified.
 - No training, inference, or human re-annotation was performed during repository preparation. The statistical analysis was re-executed locally from the compact public metric files.
+
+## Remaining archival steps
+
+- Enable the repository in the Zenodo GitHub integration.
+- Create the first GitHub release only after the Zenodo integration is enabled, then verify that Zenodo archives it and issues a DOI.
+- Add the DOI and final software citation to `CITATION.cff`, the manuscript's Code Availability text, and the corresponding bibliography entry once the Zenodo record exists.
