@@ -1,0 +1,7 @@
+system_id,system,gpu,peak_allocated_gb,peak_reserved_gb,final_allocated_gb,final_reserved_gb,peak_inference_allocated_gb,peak_inference_reserved_gb
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,Tesla T4,11.622,12.797,5.75,5.949,6.601,7.033
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,Tesla T4,13.106,14.111,5.758,5.938,7.455,8.309
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,Tesla T4,11.866,13.029,5.994,6.201,6.601,7.285
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,Tesla T4,13.35,14.363,6.002,6.174,7.698,8.561
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,Tesla T4,7.171,8.09,6.834,8.09,,
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,Tesla T4,7.414,8.303,7.077,8.303,,

@@ -1,0 +1,50 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+kaggle.json
+**/*token*
+**/*secret*
+
+# Python and notebook runtime artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.log
+
+# Model weights, checkpoints, caches, and vector databases
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+outputs/
+logs/
+wandb/
+mlruns/
+VectorDbStorage/
+chroma/
+.cache/
+
+# Local datasets and generated temporary files
+*.parquet
+*.arrow
+*.feather
+*.tmp
+
+# Raw human annotations and source exports (do not publish)
+annotated_output_final.csv
+annotated_output.csv
+annotations*.csv
+original.csv
+error_analysis_annotation.csv
+
+# Raw inference/scoring artifacts (contain benchmark text and generated answers)
+sampled_dataset_test_split_only.csv
+evaluated_results.csv
+summary_scores.csv
+
+# Distribution archives
+*.zip
+*.rar

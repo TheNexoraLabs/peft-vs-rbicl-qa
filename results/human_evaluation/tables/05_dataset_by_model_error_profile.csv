@@ -1,0 +1,5 @@
+dataset,LoRA_substantive_error_n,LoRA_N,LoRA_rate_pct,DoRA_substantive_error_n,DoRA_N,DoRA_rate_pct,RB-ICL_substantive_error_n,RB-ICL_N,RB-ICL_rate_pct,LoRA+DeepSeek_substantive_error_n,LoRA+DeepSeek_N,LoRA+DeepSeek_rate_pct,DoRA+DeepSeek_substantive_error_n,DoRA+DeepSeek_N,DoRA+DeepSeek_rate_pct,RB-ICL+DeepSeek_substantive_error_n,RB-ICL+DeepSeek_N,RB-ICL+DeepSeek_rate_pct
+squad_v2,7,50,14.0,7,50,14.0,11,50,22.0,16,50,32.0,18,50,36.0,17,50,34.0
+coqa,9,50,18.0,11,50,22.0,13,50,26.0,12,50,24.0,11,50,22.0,14,50,28.0
+tweet_qa,6,50,12.0,5,50,10.0,11,50,22.0,8,50,16.0,8,50,16.0,23,50,46.0
+NLQuAD,23,50,46.0,29,50,58.0,24,50,48.0,29,50,58.0,31,50,62.0,21,50,42.0

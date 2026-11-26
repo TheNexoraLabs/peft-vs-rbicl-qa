@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: >-
+  If you use the software and research artifacts in this repository, please cite
+  this repository. When the associated manuscript is published, please also cite
+  its final bibliographic record.
+title: >-
+  A Systematic Comparison of Parameter-Efficient Fine-Tuning and Retrieval-Based
+  In-Context Learning for Large Language Model-Based Question Answering
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/TheNexoraLabs/peft-vs-rbicl-qa"
+keywords:
+  - large language models
+  - question answering
+  - parameter-efficient fine-tuning
+  - LoRA
+  - DoRA
+  - retrieval-based in-context learning
+authors:
+  - family-names: Moghadam
+    given-names: Mahsima Ebrahimi
+    affiliation: >-
+      Department of Computer Engineering, National University of Skills (NUS),
+      Tehran, Iran
+  - family-names: Mousavi
+    given-names: Seyyed Amir Hossein
+    affiliation: >-
+      Department of Computer Engineering, Science and Research Branch,
+      Islamic Azad University, Tehran, Iran
+  - family-names: AbbasiRad
+    given-names: Ensieh
+    affiliation: >-
+      Department of Computer Engineering, National University of Skills (NUS),
+      Tehran, Iran

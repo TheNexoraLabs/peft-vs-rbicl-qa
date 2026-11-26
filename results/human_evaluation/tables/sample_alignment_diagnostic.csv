@@ -1,0 +1,7 @@
+model,n_annotated,unique_dataset_sample_ids,unique_input_signatures,sample_ids_match_LoRA,input_signatures_match_LoRA,input_instances_missing_vs_reference,input_instances_extra_vs_reference
+LoRA,200,200,200,reference,reference,0,0
+DoRA,200,200,200,no,yes,0,0
+RB-ICL,200,200,200,no,yes,0,0
+LoRA+DeepSeek,200,200,200,no,yes,0,0
+DoRA+DeepSeek,200,200,200,no,yes,0,0
+RB-ICL+DeepSeek,200,200,200,no,yes,0,0

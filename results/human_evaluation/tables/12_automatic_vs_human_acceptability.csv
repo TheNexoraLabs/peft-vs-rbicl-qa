@@ -1,0 +1,7 @@
+configuration,exact_match_mean_annotated_subset,exact_match_n,acceptable_n,annotated_n,acceptable_pct,ci95_lower_pct,ci95_upper_pct
+LoRA,0.425,200,155,200,77.5,72.0,83.0
+DoRA,0.42,200,148,200,74.0,68.5,79.5
+RB-ICL,0.295,200,141,200,70.5,64.5,76.5
+LoRA + DeepSeek,0.34,200,135,200,67.5,61.5,73.5
+DoRA + DeepSeek,0.33,200,132,200,66.0,60.0,72.0
+RB-ICL + DeepSeek,0.01,200,125,200,62.5,55.50000000000001,69.0

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Configuration & Exact Match (annotated subset) & Human-acceptable n (\%) & 95\% CI (\%) \\
+\midrule
+LoRA & 0.4250 (n=200) & 155/200 (77.5\%) & [72.0, 83.0] \\
+DoRA & 0.4200 (n=200) & 148/200 (74.0\%) & [68.5, 79.5] \\
+RB-ICL & 0.2950 (n=200) & 141/200 (70.5\%) & [64.5, 76.5] \\
+LoRA + DeepSeek & 0.3400 (n=200) & 135/200 (67.5\%) & [61.5, 73.5] \\
+DoRA + DeepSeek & 0.3300 (n=200) & 132/200 (66.0\%) & [60.0, 72.0] \\
+RB-ICL + DeepSeek & 0.0100 (n=200) & 125/200 (62.5\%) & [55.5, 69.0] \\
+\bottomrule
+\end{tabular}
+\caption{Exact Match and human-judged acceptability within each configuration's annotated response subset. Exact Match is computed only for responses with a final human label. Acceptability is defined as No error + F*. Confidence intervals are 95\% dataset-stratified percentile bootstrap intervals based on 20,000 resamples (seed=42). Cross-system input alignment is audited separately in sample\_alignment\_diagnostic.csv.}
+\label{tab:human_acceptability}
+\end{table}

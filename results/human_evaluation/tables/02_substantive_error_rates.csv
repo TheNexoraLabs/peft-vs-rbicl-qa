@@ -1,0 +1,7 @@
+model,N,no_error_n,Fstar_n,substantive_error_n,substantive_error_pct
+LoRA,200,96,59,45,22.5
+DoRA,200,91,57,52,26.0
+RB-ICL,200,141,0,59,29.5
+LoRA+DeepSeek,200,105,30,65,32.5
+DoRA+DeepSeek,200,80,52,68,34.0
+RB-ICL+DeepSeek,200,123,2,75,37.5

@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Dataset & N & Substantive errors & F* & No error & Abstention \\
+\midrule
+LoRA & squad\_v2 & 50 & 7 (14.0\%) & 13 (26.0\%) & 30 (60.0\%) & 17 (34.0\%) \\
+LoRA & coqa & 50 & 9 (18.0\%) & 20 (40.0\%) & 21 (42.0\%) & 0 (0.0\%) \\
+LoRA & tweet\_qa & 50 & 6 (12.0\%) & 19 (38.0\%) & 25 (50.0\%) & 2 (4.0\%) \\
+LoRA & NLQuAD & 50 & 23 (46.0\%) & 7 (14.0\%) & 20 (40.0\%) & 0 (0.0\%) \\
+DoRA & squad\_v2 & 50 & 7 (14.0\%) & 13 (26.0\%) & 30 (60.0\%) & 15 (30.0\%) \\
+DoRA & coqa & 50 & 11 (22.0\%) & 18 (36.0\%) & 21 (42.0\%) & 0 (0.0\%) \\
+DoRA & tweet\_qa & 50 & 5 (10.0\%) & 19 (38.0\%) & 26 (52.0\%) & 2 (4.0\%) \\
+DoRA & NLQuAD & 50 & 29 (58.0\%) & 7 (14.0\%) & 14 (28.0\%) & 0 (0.0\%) \\
+RB-ICL & squad\_v2 & 50 & 11 (22.0\%) & 0 (0.0\%) & 39 (78.0\%) & 10 (20.0\%) \\
+RB-ICL & coqa & 50 & 13 (26.0\%) & 0 (0.0\%) & 37 (74.0\%) & 0 (0.0\%) \\
+RB-ICL & tweet\_qa & 50 & 11 (22.0\%) & 0 (0.0\%) & 39 (78.0\%) & 2 (4.0\%) \\
+RB-ICL & NLQuAD & 50 & 24 (48.0\%) & 0 (0.0\%) & 26 (52.0\%) & 1 (2.0\%) \\
+LoRA+DeepSeek & squad\_v2 & 50 & 16 (32.0\%) & 7 (14.0\%) & 27 (54.0\%) & 21 (42.0\%) \\
+LoRA+DeepSeek & coqa & 50 & 12 (24.0\%) & 18 (36.0\%) & 20 (40.0\%) & 0 (0.0\%) \\
+LoRA+DeepSeek & tweet\_qa & 50 & 8 (16.0\%) & 3 (6.0\%) & 39 (78.0\%) & 0 (0.0\%) \\
+LoRA+DeepSeek & NLQuAD & 50 & 29 (58.0\%) & 2 (4.0\%) & 19 (38.0\%) & 0 (0.0\%) \\
+DoRA+DeepSeek & squad\_v2 & 50 & 18 (36.0\%) & 7 (14.0\%) & 25 (50.0\%) & 20 (40.0\%) \\
+DoRA+DeepSeek & coqa & 50 & 11 (22.0\%) & 22 (44.0\%) & 17 (34.0\%) & 0 (0.0\%) \\
+DoRA+DeepSeek & tweet\_qa & 50 & 8 (16.0\%) & 23 (46.0\%) & 19 (38.0\%) & 0 (0.0\%) \\
+DoRA+DeepSeek & NLQuAD & 50 & 31 (62.0\%) & 0 (0.0\%) & 19 (38.0\%) & 0 (0.0\%) \\
+RB-ICL+DeepSeek & squad\_v2 & 50 & 17 (34.0\%) & 0 (0.0\%) & 33 (66.0\%) & 4 (8.0\%) \\
+RB-ICL+DeepSeek & coqa & 50 & 14 (28.0\%) & 0 (0.0\%) & 36 (72.0\%) & 1 (2.0\%) \\
+RB-ICL+DeepSeek & tweet\_qa & 50 & 23 (46.0\%) & 2 (4.0\%) & 25 (50.0\%) & 2 (4.0\%) \\
+RB-ICL+DeepSeek & NLQuAD & 50 & 21 (42.0\%) & 0 (0.0\%) & 29 (58.0\%) & 3 (6.0\%) \\
+\bottomrule
+\end{tabular}
+\caption{Model- and dataset-level summary for qualitative error analysis.}
+\label{tab:model_dataset_summary}
+\end{table}

@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{llrrr}
+\toprule
+Group & N & Exact agreement & Exact agreement (\%) & Cohen's kappa \\
+\midrule
+Overall & 1200 & 722 & 60.17\% & 0.397 \\
+Model: LoRA & 200 & 117 & 58.50\% & 0.363 \\
+Model: DoRA & 200 & 114 & 57.00\% & 0.324 \\
+Model: RB-ICL & 200 & 131 & 65.50\% & 0.414 \\
+Model: LoRA+DeepSeek & 200 & 114 & 57.00\% & 0.411 \\
+Model: DoRA+DeepSeek & 200 & 112 & 56.00\% & 0.388 \\
+Model: RB-ICL+DeepSeek & 200 & 134 & 67.00\% & 0.474 \\
+Dataset: squad\_v2 & 300 & 223 & 74.33\% & 0.491 \\
+Dataset: coqa & 300 & 163 & 54.33\% & 0.313 \\
+Dataset: tweet\_qa & 300 & 179 & 59.67\% & 0.316 \\
+Dataset: NLQuAD & 300 & 157 & 52.33\% & 0.380 \\
+\bottomrule
+\end{tabular}
+\caption{Inter-annotator agreement before adjudication. Exact agreement is the proportion of cases with identical labels; Cohen's kappa is computed over the same pre-adjudication labels.}
+\label{tab:interannotator_agreement}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Dataset & LoRA subst. error rate & DoRA subst. error rate & RB-ICL subst. error rate & LoRA+DeepSeek subst. error rate & DoRA+DeepSeek subst. error rate & RB-ICL+DeepSeek subst. error rate \\
+\midrule
+squad\_v2 & 7/50 (14.0\%) & 7/50 (14.0\%) & 11/50 (22.0\%) & 16/50 (32.0\%) & 18/50 (36.0\%) & 17/50 (34.0\%) \\
+coqa & 9/50 (18.0\%) & 11/50 (22.0\%) & 13/50 (26.0\%) & 12/50 (24.0\%) & 11/50 (22.0\%) & 14/50 (28.0\%) \\
+tweet\_qa & 6/50 (12.0\%) & 5/50 (10.0\%) & 11/50 (22.0\%) & 8/50 (16.0\%) & 8/50 (16.0\%) & 23/50 (46.0\%) \\
+NLQuAD & 23/50 (46.0\%) & 29/50 (58.0\%) & 24/50 (48.0\%) & 29/50 (58.0\%) & 31/50 (62.0\%) & 21/50 (42.0\%) \\
+\bottomrule
+\end{tabular}
+\caption{Substantive error rates by dataset and model.}
+\label{tab:dataset_model_error_profile}
+\end{table}

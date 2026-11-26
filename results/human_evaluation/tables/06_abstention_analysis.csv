@@ -1,0 +1,7 @@
+model,N,abstention_yes_n,abstention_rate_pct,correct_abstention_n,false_abstention_n,missed_abstention_n,fallback_paraphrase_n
+LoRA,200,19,9.5,12,6,3,1
+DoRA,200,17,8.5,13,4,4,0
+RB-ICL,200,13,6.5,9,4,2,0
+LoRA+DeepSeek,200,21,10.5,9,12,2,0
+DoRA+DeepSeek,200,20,10.0,8,12,2,0
+RB-ICL+DeepSeek,200,10,5.0,3,5,1,2

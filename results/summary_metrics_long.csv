@@ -1,0 +1,109 @@
+system_id,system,evaluation_set,metric,score
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,Exact Match,0.4033
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,Token F1,0.6556
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,ROUGE-1,0.697
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,ROUGE-L,0.6853
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,METEOR,0.5499
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,BERTScore F1,0.647
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,Semantic Similarity,0.807
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,SacreBLEU (per-sample),0.5857
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,primary_300,SacreBLEU (corpus),0.6137
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Exact Match,0.4107
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Token F1,0.6688
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,ROUGE-1,0.6993
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,ROUGE-L,0.6867
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,METEOR,0.5595
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,BERTScore F1,0.682
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Semantic Similarity,0.8135
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,SacreBLEU (per-sample),0.5949
+lora,LoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,SacreBLEU (corpus),0.6137
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,Exact Match,0.4
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,Token F1,0.6591
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,ROUGE-1,0.6962
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,ROUGE-L,0.6849
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,METEOR,0.5543
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,BERTScore F1,0.6514
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,Semantic Similarity,0.8066
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,SacreBLEU (per-sample),0.5886
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,primary_300,SacreBLEU (corpus),0.6229
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Exact Match,0.4071
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Token F1,0.6725
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,ROUGE-1,0.6993
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,ROUGE-L,0.6872
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,METEOR,0.5643
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,BERTScore F1,0.6851
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Semantic Similarity,0.8137
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,SacreBLEU (per-sample),0.5979
+dora,DoRA + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,SacreBLEU (corpus),0.6231
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,Exact Match,0.3467
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,Token F1,0.601
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,ROUGE-1,0.6357
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,ROUGE-L,0.6215
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,METEOR,0.501
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,BERTScore F1,0.5809
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,Semantic Similarity,0.7562
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,SacreBLEU (per-sample),0.5289
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,SacreBLEU (corpus),0.5537
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Exact Match,0.3536
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Token F1,0.612
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,ROUGE-1,0.639
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,ROUGE-L,0.6238
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,METEOR,0.5091
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,BERTScore F1,0.6191
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Semantic Similarity,0.7617
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,SacreBLEU (per-sample),0.5355
+lora_deepseek,LoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,SacreBLEU (corpus),0.5535
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,Exact Match,0.3433
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,Token F1,0.5997
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,ROUGE-1,0.6346
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,ROUGE-L,0.62
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,METEOR,0.4992
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,BERTScore F1,0.5753
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,Semantic Similarity,0.7532
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,SacreBLEU (per-sample),0.5272
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,primary_300,SacreBLEU (corpus),0.5535
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Exact Match,0.35
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Token F1,0.6106
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,ROUGE-1,0.6378
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,ROUGE-L,0.6221
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,METEOR,0.5072
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,BERTScore F1,0.6142
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Semantic Similarity,0.7586
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,SacreBLEU (per-sample),0.5337
+dora_deepseek,DoRA + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,SacreBLEU (corpus),0.5533
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,Exact Match,0.28
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,Token F1,0.4629
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,ROUGE-1,0.533
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,ROUGE-L,0.5155
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,METEOR,0.4
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,BERTScore F1,0.4605
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,Semantic Similarity,0.6881
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,SacreBLEU (per-sample),0.3867
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,primary_300,SacreBLEU (corpus),0.0588
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Exact Match,0.2786
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Token F1,0.4656
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,ROUGE-1,0.5308
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,ROUGE-L,0.5113
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,METEOR,0.401
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,BERTScore F1,0.5011
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,Semantic Similarity,0.6909
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,SacreBLEU (per-sample),0.3843
+rb_icl,RB-ICL + Meta-Llama-3.1-8B-Instruct,overlap_filtered_280,SacreBLEU (corpus),0.0532
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,Exact Match,0.0067
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,Token F1,0.1654
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,ROUGE-1,0.2399
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,ROUGE-L,0.2043
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,METEOR,0.2686
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,BERTScore F1,0.1052
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,Semantic Similarity,0.4814
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,SacreBLEU (per-sample),0.0599
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,primary_300,SacreBLEU (corpus),0.0754
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Exact Match,0.0071
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Token F1,0.1676
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,ROUGE-1,0.2416
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,ROUGE-L,0.204
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,METEOR,0.2682
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,BERTScore F1,0.1753
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,Semantic Similarity,0.4825
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,SacreBLEU (per-sample),0.0607
+rb_icl_deepseek,RB-ICL + DeepSeek-R1-Distill-Llama-8B,overlap_filtered_280,SacreBLEU (corpus),0.077
