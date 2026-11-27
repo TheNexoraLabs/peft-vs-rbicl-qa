@@ -1,27 +1,32 @@
 # Results
 
-This directory contains per-example numerical evaluation metrics for the six evaluated systems. Generated answer text and source benchmark text are not redistributed.
+This directory contains data-minimized numerical evaluation results and aggregate analyses for the six evaluated systems.
 
-## Evaluation-set naming
+## Evaluation sets
 
-- `primary_300/`: the original 300-example held-out test set used for the paper's primary evaluation.
-- `overlap_filtered_280/`: the 280-example subset used for the paper's overlap sensitivity analysis after removing the same 20 context-overlap examples from every system.
-- `summary_metrics_long.csv`: aggregate metrics from the supplied summary files, in long format.
-- `sample_manifest.csv`: stable sample IDs and membership flags for the two evaluation sets.
-- `training_logs/`: epoch-level training and evaluation-loss logs for the four PEFT configurations.
-- `resource_usage/peak_gpu_memory.csv`: peak GPU-memory measurements for all six configurations.
-- `resource_usage/runtime_measurement_sources.csv`: side-by-side comparison of author-reported Kaggle Run All values, saved-notebook Papermill durations, code-level timers, and manuscript timings. These sources do not yet match.
-- `resource_usage/papermill_run_metadata.csv`: timestamps and full execution durations recorded in the six uploaded saved Notebook files.
+- `primary_300/`: the primary 300-example held-out test set used for main performance evaluation and the QA inference-runtime measurements.
+- `overlap_filtered_280/`: the 280-example subset used only for the overlap sensitivity analysis after removing the same 20 overlapping-context examples from every system.
+- `summary_metrics_long.csv`: aggregate metrics in long format.
+- `sample_manifest.csv`: stable sample IDs and membership flags for Q1 and Q2.
+- `training_logs/`: epoch-level training/evaluation-loss logs for the four PEFT configurations.
 
-## Columns in per-example result files
+## Resource usage and timing
 
-Each file contains `sample_id`, `source_dataset`, `split`, and per-example numerical metric columns. `sample_id` identifies a test item using the SHA-256 procedure documented in `scripts/add_sample_ids.py`. Generated predictions, benchmark context, questions, and reference-answer text are omitted to avoid redistributing source dataset content.
+- `resource_usage/peak_gpu_memory.csv`: peak GPU memory measurements for all six configurations.
+- `resource_usage/papermill_run_metadata.csv`: full training/RB-ICL notebook run metadata.
+- `resource_usage/qa_inference_run_metadata.csv`: four PEFT QA loader runs, model mapping, generation-cell timing, and full Notebook Run All duration.
+- `resource_usage/qa_inference_cell_measurements.csv`: the six Jupyter-cell QA measurements used in the manuscript; all cover 300 Q1 questions.
+- `resource_usage/runtime_measurement_sources.csv`: side-by-side training timers, QA runtime sources, full Notebook duration, legacy manuscript values, and provenance notes.
+- `resource_usage/computational_cost_table.xlsx`: consolidated workbook with summary, measurement sources, QA model mapping, and interpretation notes.
 
-## Important
+## QA timing interpretation
 
-Runtime sources are intentionally separated. The author identifies the workbook values as whole Kaggle Run All durations. However, the six uploaded saved Notebook files also carry Papermill start/end/duration metadata, and those full-notebook durations are substantially longer than the workbook values. The workbook has therefore been withheld from this public release candidate until its values can be matched to the exact Kaggle Notebook versions/runs. See `docs/RUNTIME_MEASUREMENT_PROVENANCE.md`. Code-level timers are separately reported with their measurement boundaries. Peak allocated GPU-memory values match the manuscript table.
+The four PEFT QA loader notebooks were assigned to systems by exact row-wise matching of all 300 generated responses to the corresponding model-specific Q1 `predicted_answer` column (300/300 exact matches for each notebook; zero empty responses). The two RB-ICL runtimes use Jupyter execution metadata for the 300-question Retrieval+Generation cell and are cross-checked against the explicit internal timers (difference below 0.30 seconds). Measurement boundaries are documented in `docs/RUNTIME_MEASUREMENT_PROVENANCE.md`.
 
+Full Notebook Run All durations are preserved separately and are not used as the QA inference-loop values. The earlier 280-row loader timings belong to Q2 sensitivity data and are not used for the main 300-question computational-cost table.
 
-Statistical-analysis outputs are under `results/statistical_analysis/`. Human-evaluation aggregates are under `results/human_evaluation/`. Raw annotation-level files and benchmark context/question/reference text are not redistributed.
+## Per-example files
 
-Per-example metric files intentionally omit generated answer text and source benchmark text. See `docs/STATISTICAL_REPRODUCIBILITY_CHECK.md`.
+Each public per-example result file contains a stable `sample_id`, `source_dataset`, `split`, and numerical metric columns. Generated prediction text, benchmark context, questions, and reference-answer text are not redistributed.
+
+Human-evaluation aggregates are under `human_evaluation/`; statistical-analysis outputs are under `statistical_analysis/`. Raw annotator-level files and benchmark text are not redistributed.

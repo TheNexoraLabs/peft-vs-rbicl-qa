@@ -68,3 +68,16 @@
 - Optionally add stable cell IDs to the eight notebooks to silence the non-fatal `nbformat` warnings.
 - The `FILE_MANIFEST.sha256` file corresponds to the archived v0.1.1 snapshot; a later maintenance commit on `main` may differ from that immutable Zenodo version.
 - After journal publication, add the article's own publication DOI and final journal citation separately. The Zenodo DOI identifies the research software, not the article.
+
+
+## Q1 QA inference timing verification (2026-11-27)
+
+- Inspected the four notebooks in the maintainer-supplied `loader-llamas.rar` archive.
+- Each notebook contains 300 saved answer outputs and a successful Papermill run (`exception = null`). No empty answer was found in any of the four 300-answer outputs.
+- Mapped the files by exact row-wise comparison of the extracted answers with each model-specific Q1 `predicted_answer` column: loader-llama3-1 = DoRA (300/300); loader-llama3-2 = DoRA+DeepSeek (300/300); loader-llama3-3 = LoRA (300/300); loader-llama3-4 = LoRA+DeepSeek (300/300). The best competing-system match was lower (280/300 for the Llama pairings and 292/300 for the DeepSeek pairings).
+- Used the saved execution metadata of the complete PEFT generation cell for the four fine-tuned systems. All PEFT outputs correspond to the 300-row Q1 primary set, not the 280-row Q2 sensitivity set.
+- Used saved Jupyter execution metadata for the cell containing the 300-question query loop for all six systems. For RB-ICL, the cell intervals are cross-checked against the explicit internal time.time() timers (differences below 0.30 seconds); both notebooks report zero prompt-budget fallbacks.
+- Replaced the former QA runtime values in the manuscript table with the Q1-aligned loop/cell measurements. Full Notebook Run All durations are preserved as a separate measure.
+- Updated the manuscript's RB-ICL Token F1/runtime table, runtime discussion, measurement-convention appendix, and computational-cost figure.
+- Added cleaned QA inference run-record notebooks with outputs cleared, execution metadata retained, and personal Google Drive checkpoint-download cells removed.
+- Rebuilt the computational-cost workbook and SHA-256 manifest utility. No new model training, inference, or annotation was performed during this audit.

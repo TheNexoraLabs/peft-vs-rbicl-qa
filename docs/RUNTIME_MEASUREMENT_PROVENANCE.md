@@ -1,40 +1,66 @@
-# Runtime measurement provenance (updated after Kaggle version-history check)
+# Runtime measurement provenance (Q1-aligned update)
 
-## What is being measured
+## Decision
 
-Three different quantities must remain separate:
+The main manuscript table now reports (i) the explicit PEFT training/adaptation timer and (ii) the QA query-processing interval measured over the same 300-question primary test set (Q1) for all six systems. Full Notebook Run All durations are retained separately and are not substituted for QA runtime.
 
-1. **Full saved Notebook execution duration**: the `papermill` metadata `start_time`, `end_time`, and `duration` in each uploaded GPU-calculator Notebook. These records have `exception = null`.
-2. **Code-level timer**: the interval explicitly measured inside the Notebook. For PEFT it begins immediately before `SFTTrainer` construction and ends after training, saving, and cleanup. For RB-ICL it measures only the 300-question Retrieval + Generation loop; model loading and vector-index setup occur before the timer.
-3. **Manuscript values**: the currently reported Training/Adaptation Time and QA Runtime values in Table `tab:computational_cost`. These are distinct metrics and should not be replaced with full Notebook duration.
+## QA model identification from the four uploaded loader notebooks
 
-## Saved Notebook execution evidence
+The four notebooks in `notebooks/qa_inference_runs/` were mapped to systems by extracting all 300 responses from their saved generation-cell outputs and comparing them row-by-row against the corresponding per-system `predicted_answer` column in the Q1 evaluation CSVs. Each mapping produced 300/300 exact matches and zero empty answers. The best alternative system had fewer matches (280/300 for the Llama-backbone pairings; 292/300 for the DeepSeek pairings), so the mapping is unambiguous.
 
-| Configuration | Full Notebook duration | Code-level timer | Kaggle UI cross-check |
-|---|---:|---:|---|
-| LoRA + Meta-Llama-3.1-8B-Instruct | 03:48:12.07 | 03:45:31.81 | Confirmed by author-provided Kaggle Version page: Save & Run All, 7 Sep 2026, ran in 3 h 48 min. |
-| DoRA + Meta-Llama-3.1-8B-Instruct | 08:48:06.06 | 08:45:31.08 | Papermill metadata only; no separate screenshot supplied. |
-| LoRA + DeepSeek-R1-Distill-Llama-8B | 04:15:14.82 | 04:12:31.93 | Papermill metadata only; no separate screenshot supplied. |
-| DoRA + DeepSeek-R1-Distill-Llama-8B | 09:05:19.43 | 09:02:31.80 | Papermill metadata only; no separate screenshot supplied. |
-| RB-ICL + Meta-Llama-3.1-8B-Instruct | 00:19:06.66 | 00:10:52.77 | Papermill metadata only; no separate screenshot supplied. |
-| RB-ICL + DeepSeek-R1-Distill-Llama-8B | 00:29:56.53 | 00:21:34.27 | Papermill metadata only; no separate screenshot supplied. |
+| Uploaded source notebook | Identified system | Exact Q1 prediction matches | Generation-cell runtime | Full QA Notebook Run All |
+|---|---|---:|---:|---:|
+| `loader-llama3-1.ipynb` | DoRA | 300/300 | 00:32:36.86 | 00:35:17.63 |
+| `loader-llama3-2.ipynb` | DoRA + DeepSeek | 300/300 | 01:52:34.56 | 01:55:55.00 |
+| `loader-llama3-3.ipynb` | LoRA | 300/300 | 00:24:27.63 | 00:27:18.59 |
+| `loader-llama3-4.ipynb` | LoRA + DeepSeek | 300/300 | 01:46:28.58 | 01:49:17.20 |
 
-The LoRA Kaggle Version page check matches the saved Notebook Papermill duration rounded to the minute. It also establishes that the old workbook value of 00:52 does **not** describe that exact Run All version. The other five saved Notebook metadata records have successful completion status (`exception = null`), but their exact Kaggle UI pages have not each been independently checked.
+The notebook filenames themselves did not encode adapter/backbone identity; the system attribution above is based on exact prediction matching, not on the generic comments in the original loader cells.
 
-## Legacy workbook time entries
+## QA runtime definition used in the manuscript
 
-The original workbook contained 00:52, 02:30, 00:50, 03:00, 00:14, and 00:14. The author recalled these as Kaggle Run All durations. However, the LoRA UI cross-check demonstrates that at least the 00:52 entry is not the duration of the saved LoRA Run All version examined here. The remaining workbook values cannot be mapped to exact saved Notebook versions from the available evidence. They are therefore retained only as legacy, unmatched entries in the audit CSV and are not used as full-run durations.
+All six systems were timed on 300 Q1 test questions.
 
-## Relation to the manuscript cost table
+- **LoRA/DoRA systems:** the saved Jupyter execution metadata (`iopub.execute_input` to `iopub.status.idle`) for the cell containing the complete 300-question generation loop was used. The interval includes prompt creation, tokenization, generation, decoding, per-answer console printing, and the final DataFrame output/display. The values are therefore observed inference-cell wall times, not pure GPU decoding times.
+- **RB-ICL systems:** the Jupyter execution metadata for the cell containing the 300-question Retrieval+Generation loop in the final V4/V5 GPU-calculator notebooks was used. The cell intervals agree with the explicit `time.time()` timers to within 0.30 seconds. Model loading and vector-index construction occur before this cell. The notebook output reports 0/300 prompt-budget fallbacks for both systems.
 
-The full Notebook duration is not the same as the manuscript's separate Training/Adaptation Time or QA Runtime. In particular:
+These are the best available run-level measurements of the per-question QA pipeline for the common Q1 workload. Their boundaries are documented transparently; they should not be interpreted as a hardware-independent decoding benchmark.
 
-- For PEFT, the code-level timer is the available direct measure of the adaptation pipeline. It is close to, but not identical with, the full Notebook duration.
-- For RB-ICL, the code-level timer measures the 300-question loop and excludes model/index setup. The full Notebook duration includes the earlier setup cells.
-- The author clarified that the same shared QA inference loader was used for all six model configurations, with the selected checkpoint path changed between runs. The supplied loader source has no explicit per-run timer and does not preserve six separate run records, so it cannot independently validate the six manuscript QA-runtime values. The shared Scoring Notebook calculates metrics and does not measure response-generation time.
+## QA runtime values used in the paper
 
-Therefore, this package does not silently replace any manuscript timing values. The manuscript QA-runtime figures still need a consistent, traceable source for all six systems before they can be revised confidently.
+| System | QA runtime | Mean seconds/query |
+|---|---:|---:|
+| LoRA | 00:24:27.63 | 4.8921 |
+| DoRA | 00:32:36.86 | 6.5229 |
+| LoRA + DeepSeek | 01:46:28.58 | 21.2953 |
+| DoRA + DeepSeek | 01:52:34.56 | 22.5152 |
+| RB-ICL | 00:10:52.47 | 2.1749 |
+| RB-ICL + DeepSeek | 00:21:33.98 | 4.3133 |
 
-## GPU memory
+## Training/adaptation timing
 
-Peak allocated and peak reserved GPU-memory values are taken from the six corresponding `gpu_memory_log.csv` files. The manuscript reports peak allocated GPU memory, and those values match its table. The original workbook's separate GPU RAM, System RAM, and Disk observations are not included in this public release because their raw source/measurement boundary was not supplied.
+The PEFT training/adaptation times remain the explicit code-level timers in the final GPU-calculator notebooks. The timer starts immediately before `SFTTrainer` construction and ends after training, model/tokenizer saving, cleanup, and CUDA synchronization. These are not full Notebook Run All durations.
+
+| System | Training/adaptation time |
+|---|---:|
+| LoRA | 03:45:31.81 |
+| DoRA | 08:45:31.08 |
+| LoRA + DeepSeek | 04:12:31.93 |
+| DoRA + DeepSeek | 09:02:31.80 |
+
+## Full Notebook Run All durations kept separately
+
+| System | QA-loader / RB-ICL full Notebook duration |
+|---|---:|
+| LoRA | 00:27:18.59 |
+| DoRA | 00:35:17.63 |
+| LoRA + DeepSeek | 01:49:17.20 |
+| DoRA + DeepSeek | 01:55:55.00 |
+| RB-ICL | 00:19:06.66 |
+| RB-ICL + DeepSeek | 00:29:56.53 |
+
+The previously reported PEFT QA times (27:31, 35:30, 1:49:29, and 1:56:11) are close to the full QA Notebook durations (within approximately 12–16 seconds), suggesting that they captured full Run All/session duration rather than the inference cell alone. The RB-ICL manuscript values did not match the inference-cell metadata or the saved full-run metadata. The current table now uses Jupyter execution-cell intervals for all six systems and records full Run All durations separately.
+
+## Main table values and GPU memory
+
+Peak allocated GPU memory remains unchanged and matches the six GPU memory logs: 11.622, 13.106, 11.866, 13.350, 7.171, and 7.414 GB in the manuscript's system order. The legacy workbook hour entries (00:52, 02:30, 00:50, 03:00, 00:14, 00:14) could not be mapped to the exact saved runs and are not used.

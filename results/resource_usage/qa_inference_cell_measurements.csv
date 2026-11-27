@@ -1,0 +1,7 @@
+configuration,test_set,n_questions,qa_runtime_seconds,qa_runtime_hh_mm_ss,mean_seconds_per_question,measurement_source,notes
+lora,Q1 primary test,300,1467.630650,00:24:27.63,4.8921,loader-llama3-3.ipynb,Jupyter execution-cell metadata; PEFT includes per-answer printing/DataFrame display; RB-ICL internal timer cross-check below 0.30 s
+dora,Q1 primary test,300,1956.859631,00:32:36.86,6.5229,loader-llama3-1.ipynb,Jupyter execution-cell metadata; PEFT includes per-answer printing/DataFrame display; RB-ICL internal timer cross-check below 0.30 s
+lora_deepseek,Q1 primary test,300,6388.578393,01:46:28.58,21.2953,loader-llama3-4.ipynb,Jupyter execution-cell metadata; PEFT includes per-answer printing/DataFrame display; RB-ICL internal timer cross-check below 0.30 s
+dora_deepseek,Q1 primary test,300,6754.555159,01:52:34.56,22.5152,loader-llama3-2.ipynb,Jupyter execution-cell metadata; PEFT includes per-answer printing/DataFrame display; RB-ICL internal timer cross-check below 0.30 s
+rb_icl,Q1 primary test,300,652.474631,00:10:52.47,2.1749,llamaindex-rag-corrected-v4-gpu-calculator.ipynb,Jupyter execution-cell metadata; PEFT includes per-answer printing/DataFrame display; RB-ICL internal timer cross-check below 0.30 s
+rb_icl_deepseek,Q1 primary test,300,1293.976578,00:21:33.98,4.3133,llamaindex-rag-deepseek-normalized-v5-gpu-calculat.ipynb,Jupyter execution-cell metadata; PEFT includes per-answer printing/DataFrame display; RB-ICL internal timer cross-check below 0.30 s

@@ -1,90 +1,73 @@
 # A Systematic Comparison of Parameter-Efficient Fine-Tuning and Retrieval-Based In-Context Learning for Large Language Model-Based Question Answering
 
-This repository contains the research notebooks and supporting artifacts for the comparative study of parameter-efficient fine-tuning (PEFT) and retrieval-based in-context learning (RB-ICL) for generative question answering.
+This repository contains research notebooks and supporting artifacts for a comparative study of parameter-efficient fine-tuning (PEFT) and retrieval-based in-context learning (RB-ICL) for generative question answering.
 
-**GitHub repository:** <https://github.com/TheNexoraLabs/peft-vs-rbicl-qa>
+**GitHub repository:** https://github.com/TheNexoraLabs/peft-vs-rbicl-qa
 
 ## Archived release and DOI
 
-The version used for this public research-code release is **v0.1.1** and is archived on Zenodo:
+The first archived software release (v0.1.1) is preserved on Zenodo:
 
-- **Version-specific DOI (recommended for citations of this exact release):** <https://doi.org/10.5281/zenodo.24582468>
-- **Concept DOI (represents all versions and resolves to the latest archived version):** <https://doi.org/10.5281/zenodo.24582467>
+- Version DOI: https://doi.org/10.5281/zenodo.24582468
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.24582467
 
-For reproducibility, cite the version-specific DOI when referring to the artifacts in release v0.1.1. Use the Concept DOI when referring to the software project across versions.
+This branch now includes additional Q1 QA-run provenance and synchronized timing evidence. The updated snapshot is prepared for the next Zenodo release (v0.1.2); its Version DOI will be added after Zenodo archives that release. The Concept DOI remains the persistent identifier for the project across versions.
 
 ## Authors
-
-The author order follows the current manuscript:
 
 - **Mahsima Ebrahimi Moghadam** — National University of Skills (NUS), Tehran, Iran. Equal contribution.
 - **Seyyed Amir Hossein Mousavi** — Science and Research Branch, Islamic Azad University, Tehran, Iran. Equal contribution.
 - **Ensieh AbbasiRad** — National University of Skills (NUS), Tehran, Iran. Supervising and corresponding author.
 
-The first and second authors contributed equally. Full affiliation details are provided in [`AUTHORS.md`](AUTHORS.md).
-
-## Repository status
-
-This public repository provides the research notebooks and supporting artifacts for the comparative study. It includes data-minimized evaluation results and aggregate human-evaluation summaries. It does not redistribute benchmark source text, model weights, raw annotator-level records, or credentials. See the documentation for provenance and known reproducibility limitations.
+Full affiliation details are provided in `AUTHORS.md`.
 
 ## Experimental systems
 
 The study evaluates six configurations:
 
-| Notebook | Configuration |
+| Configuration | Main notebook |
 |---|---|
-| `notebooks/01_lora_llama31.ipynb` | LoRA with Meta-Llama-3.1-8B-Instruct |
-| `notebooks/02_dora_llama31.ipynb` | DoRA with Meta-Llama-3.1-8B-Instruct |
-| `notebooks/03_lora_deepseek_distill.ipynb` | LoRA with DeepSeek-R1-Distill-Llama-8B |
-| `notebooks/04_dora_deepseek_distill.ipynb` | DoRA with DeepSeek-R1-Distill-Llama-8B |
-| `notebooks/05_rb_icl_llama31.ipynb` | RB-ICL with the Llama 3.1 backbone |
-| `notebooks/06_rb_icl_deepseek_distill.ipynb` | RB-ICL with the DeepSeek-R1-Distill-Llama backbone |
-| `notebooks/07_shared_qa_inference.ipynb` | Shared inference workflow used with the selected final checkpoint |
-| `notebooks/08_shared_qa_scoring.ipynb` | Shared answer-scoring workflow |
+| LoRA + Meta-Llama-3.1-8B-Instruct | `notebooks/01_lora_llama31.ipynb` |
+| DoRA + Meta-Llama-3.1-8B-Instruct | `notebooks/02_dora_llama31.ipynb` |
+| LoRA + DeepSeek-R1-Distill-Llama-8B | `notebooks/03_lora_deepseek_distill.ipynb` |
+| DoRA + DeepSeek-R1-Distill-Llama-8B | `notebooks/04_dora_deepseek_distill.ipynb` |
+| RB-ICL + Meta-Llama-3.1-8B-Instruct | `notebooks/05_rb_icl_llama31.ipynb` |
+| RB-ICL + DeepSeek-R1-Distill-Llama-8B | `notebooks/06_rb_icl_deepseek_distill.ipynb` |
+
+Shared inference/scoring notebooks are `notebooks/07_shared_qa_inference.ipynb` and `notebooks/08_shared_qa_scoring.ipynb`. Four additional cleaned QA execution records for the PEFT configurations are stored under `notebooks/qa_inference_runs/`; outputs are cleared while run timestamps are retained.
 
 ## Datasets
 
-The prepared QA corpus was constructed from SQuAD v2, TweetQA, CoQA, and NLQuAD. The prepared CSV is not redistributed here. The notebooks expect `finetune_dataset_fixed_3000.csv`; obtain the source data from the authorized dataset repositories and make the prepared CSV available to the runtime. The authors confirmed that the differently mounted CSV copies used in the final runs have identical contents.
-
-The supplementary HotpotQA material is not required for the six primary systems unless explicitly stated by the corresponding notebook.
+The prepared QA corpus was constructed from SQuAD v2, TweetQA, CoQA, and NLQuAD. Prepared dataset CSVs and benchmark source text are not redistributed. The notebooks expect a prepared CSV to be supplied locally or in the Kaggle runtime. The authors confirmed that the differently mounted prepared CSV copies used in the final runs have identical contents.
 
 ## Environment and authentication
 
-The experiments were developed in a Kaggle GPU environment. Principal package versions and installation notes are provided in `environment/installation_notes.md` and in the notebook setup cells. Exact compatibility depends on the runtime image, CUDA version, and GPU availability.
+The experiments were developed in Kaggle GPU notebook environments. Principal package versions are listed in `environment/installation_notes.md` and the notebook setup cells. Some models may require Hugging Face authentication and acceptance of model terms. Authenticate interactively or use a platform secret manager; never commit access tokens.
 
-Some models may require Hugging Face authentication and acceptance of their model terms. Authenticate interactively or use the platform's secret manager. Never commit Hugging Face, Kaggle, or other access tokens to this repository.
+## Results and timing
 
-## Results and analysis
+- `results/primary_300/`: data-minimized per-example metrics for the primary 300-question evaluation.
+- `results/overlap_filtered_280/`: sensitivity analysis on the 280-question overlap-filtered subset.
+- `results/statistical_analysis/`: reported statistical tables.
+- `results/human_evaluation/`: aggregate human-evaluation tables and figures.
+- `results/training_logs/`: PEFT training and evaluation logs.
+- `results/resource_usage/`: computational-cost workbook, GPU memory measurements, training timers, QA inference cell measurements, and Notebook run metadata.
 
-- `results/primary_300/` contains data-minimized per-example metric results for the primary 300-example evaluation.
-- `results/overlap_filtered_280/` contains the 280-example overlap-filtered sensitivity analysis.
-- `results/statistical_analysis/` contains the reported statistical tables.
-- `results/human_evaluation/` contains aggregate human-evaluation tables and figures. Raw annotator-specific files and the full adjudicated annotation source are not redistributed.
-- `results/training_logs/` contains PEFT training and evaluation logs.
-- `results/resource_usage/` records resource-measurement sources. Full saved-Notebook duration, code-level timing scopes, and manuscript-reported Training/Adaptation and QA Runtime are kept distinct; see `docs/RUNTIME_MEASUREMENT_PROVENANCE.md`.
+All six QA timing values in the current computational-cost table cover the same 300-question Q1 test set. Four PEFT QA notebooks were matched to the corresponding model by exact row-wise prediction equality (300/300 for each). The RB-ICL values come from Jupyter execution metadata for the 300-query Retrieval+Generation cells, cross-checked against explicit internal timers. See `docs/RUNTIME_MEASUREMENT_PROVENANCE.md` and `docs/QA_INFERENCE_TIMING_AUDIT.md` for exact timer boundaries and timestamps.
 
-The compact result files omit benchmark context, questions, reference-answer text, and generated answer text. `scripts/add_sample_ids.py` documents the stable sample-ID construction used for paired analysis.
+The compact public per-example result files omit benchmark context, question, reference-answer text, and generated answer text. Raw annotation-level files and model weights are not redistributed.
 
-## Statistical analysis
+## Statistical and human analysis
 
-The statistical-analysis implementation is in `analysis/statistical/statistical_analysis.py`. Required Python packages are listed in `analysis/statistical/requirements.txt`. The script and the published tables should be interpreted together with `docs/STATISTICAL_REPRODUCIBILITY_CHECK.md`.
+The statistical implementation is in `analysis/statistical/statistical_analysis.py`. Human-evaluation aggregates use the manuscript's acceptability definition (`No error` + `F*`). Raw annotator-level files are not redistributed. No claim is made that retrieval correctness was independently verified.
 
-## Human evaluation
+## Citation and license
 
-Human-acceptability summaries use the manuscript's definition (`No error` + `F*`). The repository contains aggregated tables and figures only. It does not contain row-level annotator-specific files or raw annotation exports. No claim is made that retrieval correctness was independently verified.
-
-## Citation
-
-The repository citation metadata is provided in [`CITATION.cff`](CITATION.cff). For the exact archived release used in this study, cite DOI `10.5281/zenodo.24582468`. The Concept DOI `10.5281/zenodo.24582467` represents the repository across versions.
-
-## License
-
-The code in this repository is distributed under the [MIT License](LICENSE). The license applies to the repository code and associated software files. Dataset materials, pretrained model weights, and third-party assets remain subject to their respective licenses and terms.
+Citation metadata is in `CITATION.cff`. Cite the Version DOI corresponding to the release snapshot you use; use the Concept DOI when citing the project across versions. The repository code is distributed under MIT; datasets, pretrained models, and third-party assets remain under their respective terms.
 
 ## Known limitations
 
-- The prepared dataset CSV and model weights are not included.
-- Some paths and caches remain Kaggle-oriented and may need adaptation outside Kaggle.
-- Reproducing the exact reported model runs may require the original GPU runtime, model access, and data revisions.
-- Raw inference outputs and row-level human annotations are intentionally withheld.
-- The reconstructed error taxonomy is withheld pending verification against the original annotation guideline.
+- Prepared dataset CSVs and model weights are not included.
+- Reproduction may require Kaggle-compatible CUDA/GPU versions, access to gated models, and the original dataset revisions.
+- The QA time figures are observed notebook/loop wall times, not hardware-independent GPU decoding benchmarks.
+- Raw inference outputs, raw annotations, and the reconstructed error taxonomy are withheld.
