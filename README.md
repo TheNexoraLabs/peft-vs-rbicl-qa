@@ -2,7 +2,16 @@
 
 This repository contains the research notebooks and supporting artifacts for the comparative study of parameter-efficient fine-tuning (PEFT) and retrieval-based in-context learning (RB-ICL) for generative question answering.
 
-**Repository:** <https://github.com/TheNexoraLabs/peft-vs-rbicl-qa>
+**GitHub repository:** <https://github.com/TheNexoraLabs/peft-vs-rbicl-qa>
+
+## Archived release and DOI
+
+The version used for this public research-code release is **v0.1.1** and is archived on Zenodo:
+
+- **Version-specific DOI (recommended for citations of this exact release):** <https://doi.org/10.5281/zenodo.24582468>
+- **Concept DOI (represents all versions and resolves to the latest archived version):** <https://doi.org/10.5281/zenodo.24582467>
+
+For reproducibility, cite the version-specific DOI when referring to the artifacts in release v0.1.1. Use the Concept DOI when referring to the software project across versions.
 
 ## Authors
 
@@ -16,7 +25,7 @@ The first and second authors contributed equally. Full affiliation details are p
 
 ## Repository status
 
-This public repository provides the research notebooks and supporting artifacts for the comparative study. It includes data-minimized evaluation results and aggregate human-evaluation summaries. It does not redistribute benchmark source text, model weights, raw annotator-level records, or credentials. The GitHub repository is public; the first archived Zenodo release and DOI are still pending.
+This public repository provides the research notebooks and supporting artifacts for the comparative study. It includes data-minimized evaluation results and aggregate human-evaluation summaries. It does not redistribute benchmark source text, model weights, raw annotator-level records, or credentials. See the documentation for provenance and known reproducibility limitations.
 
 ## Experimental systems
 
@@ -66,7 +75,7 @@ Human-acceptability summaries use the manuscript's definition (`No error` + `F*`
 
 ## Citation
 
-The repository citation metadata is provided in [`CITATION.cff`](CITATION.cff). Please cite the repository when using its code or derived artifacts. When the associated manuscript is published, add its final journal citation and DOI to the repository citation metadata and manuscript.
+The repository citation metadata is provided in [`CITATION.cff`](CITATION.cff). For the exact archived release used in this study, cite DOI `10.5281/zenodo.24582468`. The Concept DOI `10.5281/zenodo.24582467` represents the repository across versions.
 
 ## License
 

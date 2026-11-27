@@ -1,8 +1,7 @@
 cff-version: 1.2.0
 message: >-
   If you use the software and research artifacts in this repository, please cite
-  this repository. When the associated manuscript is published, please also cite
-  its final bibliographic record.
+  the archived version used in your work. The Concept DOI identifies all versions.
 title: >-
   A Systematic Comparison of Parameter-Efficient Fine-Tuning and Retrieval-Based
   In-Context Learning for Large Language Model-Based Question Answering
@@ -11,6 +10,11 @@ version: 0.1.1
 date-released: 2026-11-27
 license: MIT
 repository-code: "https://github.com/TheNexoraLabs/peft-vs-rbicl-qa"
+doi: 10.5281/zenodo.24582468
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24582467
+    description: Concept DOI representing all versions of this software repository.
 keywords:
   - large language models
   - question answering
