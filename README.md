@@ -6,12 +6,17 @@ This repository contains research notebooks and supporting artifacts for a compa
 
 ## Archived release and DOI
 
-The first archived software release (v0.1.1) is preserved on Zenodo:
+The current software release (**v0.1.2**) is archived on Zenodo:
 
-- Version DOI: https://doi.org/10.5281/zenodo.24582468
-- Concept DOI (all versions): https://doi.org/10.5281/zenodo.24582467
+- **Version DOI (v0.1.2):** https://doi.org/10.5281/zenodo.24597976
 
-This branch now includes additional Q1 QA-run provenance and synchronized timing evidence. The updated snapshot is prepared for the next Zenodo release (v0.1.2); its Version DOI will be added after Zenodo archives that release. The Concept DOI remains the persistent identifier for the project across versions.
+The previous archived release (**v0.1.1**) is also available:
+
+- **Version DOI (v0.1.1):** https://doi.org/10.5281/zenodo.24582468
+
+- **Concept DOI (all versions):** https://doi.org/10.5281/zenodo.24582467
+
+Use the version-specific DOI when citing or identifying the exact software snapshot. Use the Concept DOI when referring to the project across releases.
 
 ## Authors
 

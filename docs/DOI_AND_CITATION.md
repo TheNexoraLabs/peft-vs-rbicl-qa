@@ -1,13 +1,19 @@
 # Zenodo DOI and citation guidance
 
-The GitHub repository is archived on Zenodo as release **0.1.1**.
+The current GitHub software release (**v0.1.2**) is archived on Zenodo.
 
-- Version-specific DOI for release 0.1.1: https://doi.org/10.5281/zenodo.24582468
-- Concept DOI for all repository versions: https://doi.org/10.5281/zenodo.24582467
+- **Version-specific DOI for v0.1.2:** https://doi.org/10.5281/zenodo.24597976
+- **Concept DOI (all versions):** https://doi.org/10.5281/zenodo.24582467
 
-Use the version-specific DOI when citing or describing the exact software snapshot used in a study. Use the Concept DOI when referring to the software project across releases; it resolves to the latest archived version.
+The previous archived release (**v0.1.1**) remains available with its own immutable version-specific DOI:
 
-## BibTeX example for the exact archived release
+- **Version-specific DOI for v0.1.1:** https://doi.org/10.5281/zenodo.24582468
+
+## Which DOI should I cite?
+
+Use the version-specific DOI when citing or describing the exact software snapshot used in a study. For work based on release v0.1.2, cite **10.5281/zenodo.24597976**. Use the Concept DOI when referring to the software project across releases rather than to one exact snapshot.
+
+## BibTeX example for the current release (v0.1.2)
 
 ```bibtex
 @software{moghadam2026peft_rbicl_zenodo,
@@ -18,10 +24,10 @@ Use the version-specific DOI when citing or describing the exact software snapsh
                   Retrieval-Based In-Context Learning for Large Language
                   Model-Based Question Answering},
   year         = {2026},
-  version      = {0.1.1},
+  version      = {0.1.2},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.24582468},
-  url          = {https://doi.org/10.5281/zenodo.24582468}
+  doi          = {10.5281/zenodo.24597976},
+  url          = {https://doi.org/10.5281/zenodo.24597976}
 }
 ```
 

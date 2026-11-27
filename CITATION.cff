@@ -12,6 +12,9 @@ license: MIT
 repository-code: "https://github.com/TheNexoraLabs/peft-vs-rbicl-qa"
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.24597976
+    description: Version-specific DOI for release 0.1.2.
+  - type: doi
     value: 10.5281/zenodo.24582467
     description: Concept DOI representing all versions of this software repository.
 keywords:
