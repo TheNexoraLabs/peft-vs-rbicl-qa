@@ -4,21 +4,27 @@ This directory contains aggregate human-evaluation tables and figures derived fr
 
 ## Evaluation sample
 
-- 1,200 annotated model responses in total.
+- 1,200 adjudicated model-response records in total.
 - 200 responses per system across six systems.
-- The 200 response records per system correspond to 50 selected question instances from each of the four source datasets.
-- The same 200 underlying question instances were used across the six systems; the sample-alignment diagnostic confirms matching input signatures, although model-specific sample identifiers differ.
+- 50 records per system from each of the four source datasets.
+- The same 200 underlying question instances were evaluated across all six systems; the sample-alignment diagnostic compares input signatures, while model-specific response IDs may differ.
+
+## Annotation and adjudication
+
+Two annotators independently labeled each response under blinded initial-annotation conditions. A third reviewer (the supervising advisor) then examined both initial labels and the accompanying record information and assigned the final adjudicated label in `final_error_code`. The third reviewer is therefore an adjudicator, not a third independent rater.
+
+Inter-annotator agreement is calculated only from the two pre-adjudication ratings: 722 exact agreements among 1,200 paired ratings (60.17%) and Cohen's kappa of approximately 0.397.
+
+The complete protocol, operational error-code definitions, acceptability rule, and interpretation notes are documented in [`docs/HUMAN_EVALUATION_PROTOCOL.md`](../../docs/HUMAN_EVALUATION_PROTOCOL.md).
 
 ## Human acceptability
 
-Human acceptability is defined as `No error + F*`, following the manuscript. The detailed table reports the counts, percentages, and 95% confidence intervals. The confidence intervals were generated using dataset-stratified percentile bootstrap resampling (20,000 replicates; seed 42), as documented in the annotation-analysis materials.
-
-## Annotator agreement
-
-The aggregate agreement table reports 722 exact agreements among 1,200 paired ratings (60.17%) and an overall Cohen's kappa of approximately 0.397. Agreement statistics are descriptive and should be interpreted alongside the category definitions and adjudication procedure in the manuscript.
+Human acceptability is defined as `No error + F*`, following the manuscript. The detailed table reports counts, percentages, and 95% confidence intervals. Confidence intervals use dataset-stratified percentile bootstrap resampling (20,000 replicates; seed 42), as implemented in the analysis script.
 
 ## Re-generation
 
 `analysis/human_evaluation/generate_human_evaluation_outputs.py` generates the aggregate outputs from the author-held `annotated_output_final.csv`. That input and the individual annotator files are not redistributed, so the script is provided for transparency but cannot be run from the public repository alone.
 
-The script normalizes legacy source labels `RAG` and `RAG+DeepSeek` to the manuscript's current names `RB-ICL` and `RB-ICL+DeepSeek`. No claim is made that retrieval correctness was independently verified. The reconstructed error-taxonomy output and qualitative example excerpts are withheld until they are checked against the original annotation guideline and source-data redistribution terms.
+The script normalizes legacy source labels `RAG` and `RAG+DeepSeek` to the manuscript's current names `RB-ICL` and `RB-ICL+DeepSeek`. No claim is made that retrieval correctness was independently verified.
+
+The aggregate tables and figures do not expose benchmark context, questions, reference-answer text, model-generated answer text, or annotator notes.

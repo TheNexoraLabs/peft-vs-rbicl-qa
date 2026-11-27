@@ -1,0 +1,17 @@
+--- a/analysis/human_evaluation/generate_human_evaluation_outputs.py
++++ b/analysis/human_evaluation/generate_human_evaluation_outputs.py
+@@
+-# Reconstructed operational definitions based on the annotation rationales
+-# present in the dataset. These are documentation aids and should be checked
+-# against the original annotation guideline before publication.
++# Operational definitions used in the authors' human-annotation codebook.
++# The complete protocol and codebook are documented in
++# docs/HUMAN_EVALUATION_PROTOCOL.md.
+@@
+-    # The reconstructed taxonomy table is intentionally not generated for public release;
+-    # its definitions require validation against the original annotation guideline.
++    # The operational taxonomy definitions are documented in
++    # docs/HUMAN_EVALUATION_PROTOCOL.md. Raw annotation examples remain private.
+@@
+-        "5. The reconstructed taxonomy table is withheld until checked against the original annotation guideline.",
++        "5. The operational error-code definitions are documented in docs/HUMAN_EVALUATION_PROTOCOL.md.",

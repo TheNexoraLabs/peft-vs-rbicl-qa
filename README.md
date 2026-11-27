@@ -59,7 +59,7 @@ The compact public per-example result files omit benchmark context, question, re
 
 ## Statistical and human analysis
 
-The statistical implementation is in `analysis/statistical/statistical_analysis.py`. Human-evaluation aggregates use the manuscript's acceptability definition (`No error` + `F*`). Raw annotator-level files are not redistributed. No claim is made that retrieval correctness was independently verified.
+The statistical implementation is in `analysis/statistical/statistical_analysis.py`. Human-evaluation aggregates use the manuscript's acceptability definition (`No error` + `F*`). The two initial annotators were evaluated for pre-adjudication agreement; a supervising third reviewer adjudicated the final labels after reviewing both initial labels and the accompanying record information. The protocol and complete error codebook are documented in [`docs/HUMAN_EVALUATION_PROTOCOL.md`](docs/HUMAN_EVALUATION_PROTOCOL.md). Raw annotator-level files are not redistributed. No claim is made that retrieval correctness was independently verified.
 
 ## Citation and license
 
@@ -70,4 +70,4 @@ Citation metadata is in `CITATION.cff`. Cite the Version DOI corresponding to th
 - Prepared dataset CSVs and model weights are not included.
 - Reproduction may require Kaggle-compatible CUDA/GPU versions, access to gated models, and the original dataset revisions.
 - The QA time figures are observed notebook/loop wall times, not hardware-independent GPU decoding benchmarks.
-- Raw inference outputs, raw annotations, and the reconstructed error taxonomy are withheld.
+- Raw inference outputs and raw annotations are withheld; the error-code definitions and annotation procedure are documented in `docs/HUMAN_EVALUATION_PROTOCOL.md`.
