@@ -1,6 +1,6 @@
 # Preparation log
 
-## Source materials reviewed
+## Research materials reviewed
 
 - Six final GPU-calculator training/RB-ICL notebooks and their saved execution metadata.
 - Six primary and six overlap-filtered per-system evaluation CSVs, corresponding summaries, training/evaluation logs, and GPU-memory logs.
@@ -15,10 +15,10 @@
 - Removed token-like commented strings from PEFT notebooks.
 - Removed a Google Drive download cell that referenced checkpoints from a previous failed run.
 - Parameterized model, dataset, prediction-output, and scoring-output paths using environment variables while retaining Kaggle fallback paths.
-- Added the shared inference and scoring notebooks; the author confirms that this same workflow was used across all six configurations by selecting the appropriate final checkpoint for each run.
-- Added warnings and `.gitignore` rules to prevent raw prediction/scoring CSVs and raw annotation files from being committed.
+- Added the shared inference and scoring notebooks; the maintainer confirms that this same workflow was used across all six configurations by selecting the appropriate final checkpoint for each run.
+- Added `.gitignore` rules to prevent raw prediction/scoring CSVs and raw annotation files from being committed.
 
-## Automatic evaluation and statistics
+## Evaluation and statistical analysis
 
 - Confirmed six aligned primary evaluation sets of 300 examples and six aligned sensitivity sets of 280 examples. The 280-example sets are exact subsets with the same 20 examples removed across all systems.
 - Confirmed the primary and sensitivity Token F1 means match the manuscript to four decimal places.
@@ -32,30 +32,39 @@
 - Human acceptability is reported as `No error + F*`, with dataset-stratified 95% percentile bootstrap confidence intervals (20,000 resamples; seed 42).
 - Agreement summary: 722 exact agreements out of 1,200 (60.17%); overall Cohen's kappa approximately 0.397.
 - Updated legacy RAG labels to RB-ICL in public output tables. The source-label normalization remains in the generator for backwards compatibility.
-- Removed the unsupported statement that retrieval correctness was established. Qualitative examples and the reconstructed error taxonomy are withheld pending review of the source-data terms and original annotation guideline. Raw annotation-level files are not redistributed.
+- Removed the unsupported statement that retrieval correctness was established. Qualitative examples and the reconstructed error taxonomy are withheld pending review of source-data terms and the original annotation guideline. Raw annotation-level files are not redistributed.
 
 ## Resource measurement provenance
 
 - Preserved full Notebook Papermill run metadata, internal code-level timers, and manuscript timing values as distinct measures.
 - The LoRA Run All duration (03:48:12) was independently confirmed against the author's Kaggle Version page. Other saved Notebook metadata records are successful but have not each been independently screenshot-verified.
-- The legacy Excel hour entries could not be mapped to the same saved Notebook versions; they are not treated as the source of full-run duration.
+- Legacy Excel hour entries could not be mapped to the same saved Notebook versions; they are not treated as the source of full-run duration.
 - Peak allocated/reserved GPU memory and PEFT training/evaluation logs are included.
 
-## Public repository status (2026-11-26)
+## Public GitHub repository status (2026-11-27)
 
-- The repository was pushed to the public GitHub repository: https://github.com/TheNexoraLabs/peft-vs-rbicl-qa
-- The published tree contains 87 files (86 files covered by `FILE_MANIFEST.sha256`; the manifest does not hash itself).
-- The public tree was checked after upload. All expected top-level folders, eight notebooks, result files, documentation, `CITATION.cff`, and `LICENSE` are present.
-- The local release archive matched all 86 SHA-256 manifest entries with no missing, mismatched, or unexpected files.
-- All eight notebooks passed current `nbformat` validation; the validator emitted a non-fatal warning that cell `id` values are absent. This may be cleaned up in a later maintenance commit.
-- The three Python scripts compiled successfully, relative Markdown links resolved, and a scan for common token/key patterns found no matches in the release files. These checks reduce risk but are not a guarantee that every possible secret has been identified.
+- Repository: https://github.com/TheNexoraLabs/peft-vs-rbicl-qa
+- The public tree contains 87 files (86 files covered by `FILE_MANIFEST.sha256`; the manifest does not hash itself).
+- All expected top-level folders, eight notebooks, result files, documentation, `CITATION.cff`, and `LICENSE` were verified in the public GitHub tree.
+- The local release archive matched all 86 SHA-256 manifest entries with no missing or mismatched entries at the time of the v0.1.1 release.
+- All eight notebooks passed current `nbformat` validation; a non-fatal missing-cell-ID warning remains.
+- Python source files compiled; relative Markdown links resolved; a best-effort scan found no common token/key patterns.
 - The maintainer reports that all three authors approve public release of the code and derived result artifacts.
-- The MIT license copyright notice is set to `TheNexoraLabs` at the maintainer's instruction. The organization name should be used as copyright holder only if it is the actual rights holder or is authorized by the rights holders to issue the license.
-- The LoRA Run All duration (03:48:12) was independently confirmed against the author's Kaggle Version page. Other saved Notebook metadata records are successful but have not each been independently screenshot-verified.
-- No training, inference, or human re-annotation was performed during repository preparation. The statistical analysis was re-executed locally from the compact public metric files.
+- The MIT copyright line is `TheNexoraLabs`; the maintainer should ensure the organization is the actual copyright holder or is authorized by the rights holders to issue this license.
 
-## Remaining archival steps
+## Zenodo archival status (2026-11-27)
 
-- Enable the repository in the Zenodo GitHub integration.
-- Create the first GitHub release only after the Zenodo integration is enabled, then verify that Zenodo archives it and issues a DOI.
-- Add the DOI and final software citation to `CITATION.cff`, the manuscript's Code Availability text, and the corresponding bibliography entry once the Zenodo record exists.
+- GitHub-to-Zenodo integration is enabled for `TheNexoraLabs/peft-vs-rbicl-qa`.
+- GitHub release `0.1.1` was archived successfully.
+- Version DOI: https://doi.org/10.5281/zenodo.24582468
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.24582467
+- Both DOI identifiers are recorded in the repository `README.md` and `CITATION.cff`.
+- The manuscript's Code Availability statement and software bibliography entry cite the exact software version 0.1.1.
+
+## Remaining maintenance items
+
+- Confirm that `TheNexoraLabs` is the legal copyright holder or is formally authorized by the relevant rights holders to issue the MIT license for all included code.
+- Have all authors review the final README, author metadata, and citation metadata.
+- Optionally add stable cell IDs to the eight notebooks to silence the non-fatal `nbformat` warnings.
+- The `FILE_MANIFEST.sha256` file corresponds to the archived v0.1.1 snapshot; a later maintenance commit on `main` may differ from that immutable Zenodo version.
+- After journal publication, add the article's own publication DOI and final journal citation separately. The Zenodo DOI identifies the research software, not the article.
