@@ -7,7 +7,8 @@ title: >-
   A Systematic Comparison of Parameter-Efficient Fine-Tuning and Retrieval-Based
   In-Context Learning for Large Language Model-Based Question Answering
 type: software
-version: 0.1.0
+version: 0.1.1
+date-released: 2026-11-27
 license: MIT
 repository-code: "https://github.com/TheNexoraLabs/peft-vs-rbicl-qa"
 keywords:
